@@ -124,7 +124,8 @@ $file = new Filemanager($conexao);
             <?php
 
 
-            $file = new Filemanager($conexao); // Passar a conexão do banco de dados
+            $file = new Filemanager($conexao);
+            
             $file->getpercategoria();
 
             ?>
