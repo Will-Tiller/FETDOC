@@ -277,7 +277,7 @@ class Filemanager
     public function contmemorandos()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE estado = 'Processado'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -291,6 +291,296 @@ class Filemanager
         }
 
     }
+
+    public function contconvintes()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contpedidos()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contInformes()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contProcessos()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contContratos()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contEditais()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contActas()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contRelatorios()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contRequerimentos()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contDocumentosrh()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contfiscais()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contCorrespondencias()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contTodos()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contmemorandos()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contmemorandos()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contmemorandos()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+
 
 }
 

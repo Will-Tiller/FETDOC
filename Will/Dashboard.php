@@ -145,32 +145,13 @@ $file = new Filemanager($conexao);
 
                 <div class="col">
 
-                  <h4><a href="">Memorandos:</a> 4</h4>
+                  <h4><a href="">Memorandos:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
                 <div class="col">
 
-                  <h4><a href="">Convintes:</a> 4</h4>
-
-                </div>
-
-              </div>
-
-            </div>
-            <div class="doc-types">
-
-              <div class="row">
-
-                <div class="col">
-
-                  <h4><a href="">Pedidos:</a> 4</h4>
-
-                </div>
-
-                <div class="col">
-
-                  <h4><a href="">Informes:</a> 4</h4>
+                  <h4><a href="">Convintes:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
@@ -183,32 +164,13 @@ $file = new Filemanager($conexao);
 
                 <div class="col">
 
-                  <h4><a href="">Processos Acadêmicos:</a> 4</h4>
+                  <h4><a href="">Pedidos:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
                 <div class="col">
 
-                  <h4><a href="">Contratos e convênios:</a> 4</h4>
-
-                </div>
-
-              </div>
-
-            </div>
-            <div class="doc-types">
-
-              <div class="row">
-
-                <div class="col">
-
-                  <h4><a href="">Editais:</a> 4</h4>
-
-                </div>
-
-                <div class="col">
-
-                  <h4><a href="">Actas:</a> 4</h4>
+                  <h4><a href="">Informes:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
@@ -221,33 +183,51 @@ $file = new Filemanager($conexao);
 
                 <div class="col">
 
-                  <h4><a href="">Relatórios:</a> 4</h4>
+                  <h4><a href="">Processos Acadêmicos:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
                 <div class="col">
 
-                  <h4><a href="">Requerimentos e declarações:</a> 4</h4>
+                  <h4><a href="">Contratos e convênios:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
               </div>
 
             </div>
-
             <div class="doc-types">
 
               <div class="row">
 
                 <div class="col">
 
-                  <h4><a href="">Relatórios:</a> 4</h4>
+                  <h4><a href="">Editais:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
                 <div class="col">
 
-                  <h4><a href="">Requerimentos e declarações:</a> 4</h4>
+                  <h4><a href="">Actas:</a> <?php echo $file->contmemorandos();?></h4>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="doc-types">
+
+              <div class="row">
+
+                <div class="col">
+
+                  <h4><a href="">Relatórios:</a> <?php echo $file->contmemorandos();?></h4>
+
+                </div>
+
+                <div class="col">
+
+                  <h4><a href="">Requerimentos e declarações:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
@@ -261,13 +241,13 @@ $file = new Filemanager($conexao);
 
                 <div class="col">
 
-                  <h4><a href="">Documentos de RH:</a> 4</h4>
+                  <h4><a href="">Relatórios:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
                 <div class="col">
 
-                  <h4><a href="">Notas fiscais e facturas:</a> 4</h4>
+                  <h4><a href="">Requerimentos e declarações:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
@@ -281,13 +261,33 @@ $file = new Filemanager($conexao);
 
                 <div class="col">
 
-                  <h4><a href="">Correspondências diversa:</a> 4</h4>
+                  <h4><a href="">Documentos de RH:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
                 <div class="col">
 
-                  <h4><a href="">Todos:</a> 4</h4>
+                  <h4><a href="">Notas fiscais e facturas:</a> <?php echo $file->contmemorandos();?></h4>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="doc-types">
+
+              <div class="row">
+
+                <div class="col">
+
+                  <h4><a href="">Correspondências diversa:</a> <?php echo $file->contmemorandos();?></h4>
+
+                </div>
+
+                <div class="col">
+
+                  <h4><a href="">Todos:</a> <?php echo $file->contmemorandos();?></h4>
 
                 </div>
 
