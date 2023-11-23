@@ -1,0 +1,15 @@
+.login-form {
+    width: 400px;
+    margin: 50px auto;
+    padding: 30px; 
+    box-shadow: 2px 2px 4px #ccc;
+  } 
+  
+  .login-form h1 {
+    text-align: center; 
+  }
+  
+  .login-form .btn {
+    width: 100%;
+    font-size: 1.2em; 
+  }
