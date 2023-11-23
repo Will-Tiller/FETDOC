@@ -87,7 +87,7 @@ include_once('Backend/Filemanager.php');
                                 aria-describedby="search-icon">
                         </div>
 
-                        <div class="document">
+                        <div class="file table-responsive">
 
                             <?php
 
@@ -105,21 +105,22 @@ include_once('Backend/Filemanager.php');
             </div>
 
             <div class="col-6">
+    <div class="card">
+        <div class="card-body">
+            <h3>João Silva</h3>
+            <p>3 documentos relacionados</p>
 
-                <div class="card">
-                    <div class="card-body">
-
-                        <h3>Selecione Um Arquivo</h3>
-
-                        <div class="file">
-                            
-
-                        </div>
-
-                    </div>
-                </div>
-
+            <div class="file table-responsive">
+                <?php
+                $file = new Filemanager($conexao);
+                $file->getallArquivos();
+                ?>
             </div>
+
+        </div>
+    </div>
+</div>
+
 
         </div>
 
