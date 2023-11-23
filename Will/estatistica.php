@@ -187,9 +187,7 @@ $file = new Filemanager($conexao);
                 });
               }); 
             </script>
-            </head>
 
-            <body>
               <div style="text-align:center">
                 <center>
                   <button id="btnID">
@@ -209,10 +207,6 @@ $file = new Filemanager($conexao);
     </div>
 
   </div>
-
-
-
-
 
   <script src="assets/app.js"></script>
 
