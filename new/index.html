@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Secretaria FET</title>
+</head>
+<body>
+    <header>
+        <h1>Secretaria da Faculdade de Engenharia e Tecnologias</h1>
+    </header>
+
+    <section id="form-section">
+        <form id="document-form">
+            <label for="doc-type">Tipo de Documento:</label>
+            <select id="doc-type" required>
+                <!-- Opções de tipos de documentos -->
+            </select>
+
+            <label for="doc-subject">Assunto:</label>
+            <input type="text" id="doc-subject" required>
+
+            <label for="doc-destination">Destino:</label>
+            <input type="text" id="doc-destination" required>
+
+            <label for="receiver">Quem Recebeu:</label>
+            <input type="text" id="receiver" required>
+
+            <!-- Adicione mais campos conforme necessário -->
+
+            <button type="button" onclick="registerDocument()">Registrar Documento</button>
+        </form>
+    </section>
+
+    <section id="dashboard-section">
+        <!-- Dashboards e informações serão exibidos aqui -->
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

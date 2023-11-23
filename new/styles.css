@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #1E375F; /* Azul escuro */
+    color: #FFFFFF; /* Branco */
+    text-align: center;
+    padding: 10px;
+}
+
+#form-section {
+    margin: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #1E375F; /* Azul escuro */
+    color: #FFFFFF; /* Branco */
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#dashboard-section {
+    margin: 20px;
+}
+
+/* Adicione mais estilos conforme necessário */

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FET - Faculdade de Engenharias e Tecnologias</title>
+    <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="css/theme.css" rel="stylesheet">
+    <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+    <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
+        rel='stylesheet'>
+</head>
+
+<body>
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                <i class="icon-reorder shaded"></i></a><a class="brand" href="href="index.html"">Gestão de Arquivos</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <ul class="nav nav-icons">
+                    <li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
+                </ul>
+                <!--<form class="navbar-search pull-left input-append" action="#">
+                <input type="text" class="span3">
+                <button class="btn" type="button">
+                    <i class="icon-search"></i>
+                </button>
+                </form>-->
+                <ul class="nav pull-right">
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastrar
+                        <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="signup.html">Cadastrar Usuario</a></li>
+                            <li><a href="signup.html">Cadastrar Adminstrador</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="images/user.png" class="nav-avatar" />
+                        <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Your Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.nav-collapse -->
+        </div>
+    </div>
+    <!-- /navbar-inner -->
+</div>
+
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <div class="sidebar">
+                    <ul class="widget widget-menu unstyled">
+                        <li class="active"><a href="index.php"><i class="menu-icon icon-dashboard"></i>Dashboard
+                        </a></li>
+                        <li>
+                            <a class="collapsed" data-toggle="collapse" href="#togglePage"><i class="menu-icon icon-book"></i>
+                            </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                            </i>Tramitação </a>
+                                <ul id="togglePage" class="collapse unstyled">
+                                    <li><a href="acompanhar.html"><i class="icon-inbox"></i>Acompanhar Progresso</a></li>
+                                    <li><a href="registrar.html"><i class="icon-inbox"></i>Registrar Arquivo</a></li>
+                                </ul>
+                        </li>
+                        </li>
+                        <li><a href="estatistica.html"><i class="menu-icon icon-tasks"></i>Arquivos</a></li>
+                        <li><a href="estatistica.html"><i class="menu-icon icon-bar-chart"></i>Estatísticas </a></li>
+                    </ul>
+  
+                    <ul class="widget widget-menu unstyled">
+                        <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
+                        </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                        </i>Conta </a>
+                            <ul id="togglePages" class="collapse unstyled">
+                                <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
+                                <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
+                                <li><a href="table.php"><i class="icon-inbox"></i>All Users </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="logout.php"><i class="menu-icon icon-signout"></i>Sair
+                    </a></li>
+                    </ul>
+                </div>
+                <!--/.sidebar-->
+            </div>
+            <!--/.span3-->
+            <div class="span9">
+                <div class="content">
+                    <div class="btn-controls">
+
+                      <div class="jumbotron">
+                        <h1>Estatísticas</h1>
+                        <p>Visão geral de documentos, entradas e status</p>  
+                      </div>
+                        <div class="btn-box-row row-fluid">
+                          
+                            <a href="#" class="btn-box big span4"><i class=" icon-paste"></i><b>12</b>
+                                <p class="text-muted">
+                                  Documentos por Mês</p>
+                            </a><a href="#" class="btn-box big span4"><i class="icon-paste"></i><b>100</b>
+                                <p class="text-muted">
+                                  Documentos por Status</p>
+                            </a><a href="#" class="btn-box big span4"><i class="icon-paste"></i><b>899</b>
+                                <p class="text-muted">
+                                  Média de Tempo por Setor</p>
+                            </a>
+                        </div>
+                        <div class="btn-box-row row-fluid">
+                            <div class="span8">
+                              <section class="docs">
+                                <h3>
+                                  Últimos Documentos Processados</h3>
+                                <p>
+                                    A list of items in which the order does <em>not</em> explicitly matter.</p>
+        
+                                  <table class="datatable-1 table table-bordered table-striped display" width="100%">
+                                    <thead>
+                                      <tr>
+                                        <th>#</th>
+                                        <th>Data</th>
+                                        <th>Tipo</th>
+                                        <th>Setor Atual</th>
+                                        <th>Status</th>  
+                                      </tr>
+                                    </thead>
+                                
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>01/01/2023</td>
+                                        <td>Memorando</td>
+                                        <td>Reitoria</td>
+                                        <td>Concluído</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="module hide">
+                        <div class="module-head">
+                            <h3>
+                                Adjust Budget Range</h3>
+                        </div>
+                        <div class="module-body">
+                            <div class="form-inline clearfix">
+                                <a href="#" class="btn pull-right">Update</a>
+                                <label for="amount">
+                                    Price range:</label>
+                                &nbsp;
+                                <input type="text" id="amount" class="input-" />
+                            </div>
+                            <hr />
+                            <div class="slider-range">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--/.module-->
+                </div>
+                <!--/.content-->
+            </div>
+            <!--/.span9-->
+
+        </div>
+    </div>
+    <!--/.container-->
+</div>
+
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
