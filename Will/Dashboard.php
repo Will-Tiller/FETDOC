@@ -1,3 +1,11 @@
+<?php
+
+include_once('Backend/conexao.php');
+include_once('Backend/Filemanager.php');
+$file = new Filemanager($conexao);
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,17 +74,17 @@
       <div class="col-md-3">
         <div class="card bg-primary text-white">
           <div class="card-body">
-            <h2>12</h2>
-            <p>Documentos Regularizados</p>
+          <h2><?php echo $file->gettotal(); ?></h2>
+            <p>Total de Arquivos</p>
           </div>
         </div>
       </div>
   
       <div class="col-md-3">
-        <div class="card bg-danger text-white">
+        <div class="card bg-success  text-white">
           <div class="card-body">
-            <h2>100</h2> 
-            <p>Documentos Pendentes</p>
+          <h2><?php echo $file->getreguralized(); ?></h2> 
+            <p>Arquivos Regularizados</p>
           </div>
         </div>
       </div>
@@ -84,8 +92,8 @@
       <div class="col-md-3">
         <div class="card bg-warning  text-white">
           <div class="card-body">
-            <h2>100</h2> 
-            <p>Todos Documentos</p>
+            <h2><?php echo $file->getnotreguralized(); ?></h2> 
+            <p>Arquivos Pendentes</p>
           </div>
         </div>
       </div>

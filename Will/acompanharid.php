@@ -108,12 +108,14 @@ include_once('Backend/Filemanager.php');
     <div class="card">
         <div class="card-body">
             <h3>João Silva</h3>
-            <p>3 documentos relacionados</p>
 
             <div class="file table-responsive">
                 <?php
+
+                $id=$_GET['id'];
+            
                 $file = new Filemanager($conexao);
-                $file->getallArquivos();
+                $file->getallArquivos($id);
                 ?>
             </div>
 

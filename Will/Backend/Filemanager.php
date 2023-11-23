@@ -51,10 +51,10 @@ class Filemanager
         }
     }
 
-    public function getallArquivos()
+    public function getallArquivos($id)
     {
 
-        $totalArquivosQuery = $this->conexao->query("SELECT * FROM ficheiros") or die($this->conexao->error);
+        $totalArquivosQuery = $this->conexao->query("SELECT * FROM ficheiros WHERE id = $id") or die($this->conexao->error);
 
         if ($totalArquivosQuery->num_rows > 0) {
             echo '<table class="table">';
@@ -131,7 +131,7 @@ class Filemanager
                 echo "<td>{$file['categoria']}</td>";
                 echo "<td>{$file['prioridade']}</td>";
                 echo "<td>{$file['estado']}</td>";
-                echo "<td><a href='detalhes_arquivo.php?id={$file['id']}'><button>Selecionar</button></a></td>";
+                echo "<td><a href='Backend/detalhes_arquivo.php?id={$file['id']}'><button>Selecionar</button></a></td>";
                 echo "</tr>";
             }
 
@@ -179,6 +179,59 @@ class Filemanager
 
     }
 
-}
+    public function getnotreguralized() {
+
+        
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE estado = 'Em Processamento'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0; 
+        }
+    }
+
+    public function getreguralized() {
+
+        
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE estado = 'Processado'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0; 
+        }
+    }
+
+    public function gettotal() {
+
+        
+        $query = "SELECT COUNT(*) as count FROM ficheiros";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0; 
+        }
+    }
+
+
+    }
+
 
 ?>

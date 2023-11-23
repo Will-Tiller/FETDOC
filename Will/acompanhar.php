@@ -87,7 +87,7 @@ include_once('Backend/Filemanager.php');
                                 aria-describedby="search-icon">
                         </div>
 
-                        <div class="document">
+                        <div class="file table-responsive">
 
                             <?php
 
