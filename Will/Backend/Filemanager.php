@@ -295,7 +295,7 @@ class Filemanager
     public function contconvintes()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Convintes'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -313,7 +313,7 @@ class Filemanager
     public function contpedidos()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Pedidos'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -331,7 +331,7 @@ class Filemanager
     public function contInformes()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Informes'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -349,7 +349,7 @@ class Filemanager
     public function contProcessos()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Processos'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -367,7 +367,7 @@ class Filemanager
     public function contContratos()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Contratos e convênios'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -385,7 +385,7 @@ class Filemanager
     public function contEditais()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Editais'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -403,7 +403,7 @@ class Filemanager
     public function contActas()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Actas'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -421,7 +421,7 @@ class Filemanager
     public function contRelatorios()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Relatórios'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -439,7 +439,7 @@ class Filemanager
     public function contRequerimentos()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Requerimentos e declarações'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -457,7 +457,7 @@ class Filemanager
     public function contDocumentosrh()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Documentos de RH'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -475,7 +475,7 @@ class Filemanager
     public function contfiscais()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Notas fiscais e facturas'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -493,7 +493,7 @@ class Filemanager
     public function contCorrespondencias()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Correspondências diversas'";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -511,7 +511,7 @@ class Filemanager
     public function contTodos()
     {
 
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
+        $query = "SELECT COUNT(*) as count FROM ficheiros";
         $result = $this->conexao->query($query);
 
         if ($result) {
@@ -526,7 +526,43 @@ class Filemanager
 
     }
 
-    public function contmemorandos()
+    public function contavisos()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Avisos'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contDespacho()
+    {
+
+        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Despacho'";
+        $result = $this->conexao->query($query);
+
+        if ($result) {
+            $row = $result->fetch_assoc();
+
+            return $row['count'];
+
+        } else {
+
+            return 0;
+        }
+
+    }
+
+    public function contf()
     {
 
         $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
@@ -543,44 +579,6 @@ class Filemanager
         }
 
     }
-
-    public function contmemorandos()
-    {
-
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
-        $result = $this->conexao->query($query);
-
-        if ($result) {
-            $row = $result->fetch_assoc();
-
-            return $row['count'];
-
-        } else {
-
-            return 0;
-        }
-
-    }
-
-    public function contmemorandos()
-    {
-
-        $query = "SELECT COUNT(*) as count FROM ficheiros WHERE categoria = 'Memorandos'";
-        $result = $this->conexao->query($query);
-
-        if ($result) {
-            $row = $result->fetch_assoc();
-
-            return $row['count'];
-
-        } else {
-
-            return 0;
-        }
-
-    }
-
-
 
 }
 
