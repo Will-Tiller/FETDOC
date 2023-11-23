@@ -203,6 +203,7 @@ include_once('Backend/Filemanager.php');
       <input type="text" class="form-control" placeholder="Pesquisar arquivos" aria-describedby="search-icon">
     </div>
 
+    <div class="card-body table-responsive" style="max-height: 400px; overflow-y: auto;">
     <?php
 
 
@@ -210,6 +211,7 @@ include_once('Backend/Filemanager.php');
     $file->getTotalArquivos();
 
     ?>
+    </div>
   </div>
 
 
