@@ -87,7 +87,7 @@ include_once('Backend/Filemanager.php');
                                 aria-describedby="search-icon">
                         </div>
 
-                        <div class="file table-responsive">
+                        <div class="file table-responsive" style="max-height: 500px; overflow-y: auto;">
 
                             <?php
 
@@ -107,7 +107,7 @@ include_once('Backend/Filemanager.php');
             <div class="col-6">
 
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body " style="max-height: 500px; overflow-y: auto;">
 
                         <h3>Selecione Um Arquivo</h3>
 

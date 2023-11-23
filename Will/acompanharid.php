@@ -87,7 +87,7 @@ include_once('Backend/Filemanager.php');
                                 aria-describedby="search-icon">
                         </div>
 
-                        <div class="file table-responsive">
+                        <div class="file table-responsive" style="max-height: 500px; overflow-y: auto;">
 
                             <?php
 

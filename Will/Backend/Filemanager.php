@@ -237,7 +237,7 @@ class Filemanager
     public function getpercategoria()
     {
 
-        $totalArquivos = $this->conexao->query("SELECT * FROM ficheiros ORDER BY data_submissao DESC LIMIT 5") or die($this->conexao->error);
+        $totalArquivos = $this->conexao->query("SELECT * FROM ficheiros ORDER BY data_submissao DESC LIMIT 7") or die($this->conexao->error);
 
 
         if ($totalArquivos->num_rows > 0) {

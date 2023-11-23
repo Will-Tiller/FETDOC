@@ -106,8 +106,8 @@
                         <option value="Requerimentos e declarações"> Requerimentos e declarações </option>
                         <option value="Documentos de RH">Documentos de RH</option>
                         <option value="Notas fiscais e facturas"> Notas fiscais e facturas</option>
-                        <option value="Correspondências diversa">Correspondências diversa</option>
-                        <option value="Sem Categori"> Sem Categoria</option>
+                        <option value="Correspondências diversas">Correspondências diversa</option>
+                        <option value="Sem Categoria"> Sem Categoria</option>
 
                     </select>
                 </div>
@@ -117,7 +117,7 @@
                         <option value="Coordenação dos Cursos">Coordenação dos Cursos</option>
                         <option value="Secretaria Acadêmica">Secretaria Acadêmica</option>
                         <option value="Secretaria Geral">Secretaria Geral</option>
-                        <option value="Sector Financeiro">Sector Financeiro<option>
+                        <option value="Sector Financeiro">Sector Financeiro</option>
                         <option value="Direção da Faculdade">Direção da Faculdade</option>
                         <option value="Conselho Acadêmico"> Conselho Acadêmico</option>
                         <option value="Biblioteca">Biblioteca</option>
