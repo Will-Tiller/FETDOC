@@ -189,11 +189,11 @@ $file = new Filemanager($conexao);
             </script>
 
               <div style="text-align:center">
-                <center>
+                
                   <button id="btnID">
                     Mostrar Gráfico
                   </button>
-                  <center><br>
+                  <br>
                     <div id="chartID" style="height:400px;  
                 max-width:950px;  
                 margin:0px auto;">

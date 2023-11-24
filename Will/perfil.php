@@ -1,5 +1,10 @@
+<?php
 
+include_once('Backend/conexao.php');
+include_once('Backend/Profile.php');
+$profile = new Profile($conexao);
 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -75,12 +80,12 @@
             <div class="card mb-4">
               <div class="card-body text-center">
                 <img src="assets/avatar2.png" style="width: 150px;">
-                <h5 class="my-3">John Smith</h5>
-                <p class="text-muted mb-1">Email</p>
-                <p class="text-muted mb-1">Cargo</p>
-                <p class="text-muted mb-1">Nível</p>
-                <p class="text-muted mb-4">Senha</p>
-                <div class="d-flex justify-content-center mb-2">
+                <?php
+
+                $profile->dados();
+
+                ?>
+                <br><div class="d-flex justify-content-center mb-2">
                   <button type="button" class="btn btn-primary">Actualizar</button>
                 </div>
               </div>
@@ -131,42 +136,10 @@
           <div class="col-lg-8">
             <div class="card mb-4">
               <div class="card-body">
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Nome Completo</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="text-muted mb-0">Johnatan Smith</p>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Email</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="text-muted mb-0">example@example.com</p>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Senha</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="text-muted mb-0">(097) 234-5678</p>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Nível</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="text-muted mb-0">(098) 765-4321</p>
-                  </div>
-                </div>
-                <hr>
+                <h3>Funcionários da Secretaria</h3>
+              <?php 
+                    $profile->todosusers();
+                  ?>
               </div>
             </div>
             <div class="row">
