@@ -95,9 +95,11 @@ class Profile
 
         // Agora pode usar $dadosUsuario no form
         echo '<h3>Actulizar Meus Dados</h3>';
-        echo '<form action="perfil\_update.php" method="post">';
+        echo '<form action="Backend/actualizarperfil.php" method="post">';
 
         echo '<div class="form-group">';
+
+        echo '<input type="text" id="nomee" style="visibility: hidden;" name="nomee" value="' . $dadosUsuario['nome'] . '" class="form-control">';
 
         echo '<label>Nome:</label>';
 
@@ -121,7 +123,14 @@ class Profile
 
         echo '</div>';
 
-        echo '<button type="submit">Salvar</button>';
+        echo "<div class='d-flex justify-content-between mb-2'>
+        
+          <button ttype='submit' class='btn btn-primary'>Atualizar</button>
+        
+        <a href='perfil.php'>
+          <button type='button' class='btn btn-danger'>Voltar</button>
+        </a>
+      </div>";
 
         echo '</form>';
     }
