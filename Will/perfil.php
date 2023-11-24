@@ -140,12 +140,9 @@ $profile = new Profile($conexao);
             <div class="card mb-4">
               <div class="card-body">
                 <h3>Funcionários da Secretaria</h3>
-                <button type="button" class="btn btn-primary" data-toggle="modal"
-                  data-target="#adicionarFuncionarioModal">
-                  
-                </button>
+
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-                + Funcionario
+                  + Funcionario
                 </button>
                 <?php $profile->todosusers(); ?>
               </div>
@@ -225,48 +222,53 @@ $profile = new Profile($conexao);
 
   </div>
 
-  <!-- Modal de Adição de Funcionário -->
   <div class="modal fade" id="myModal">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
 
-      <!-- Modal body -->
-      <div class="modal-body">
-      <form>
-            <!-- Campos de formulário -->
+        <div class="modal-body">
+          <form action="Backend/adicionarprofile.php" method="post">
             <div class="form-group">
               <label for="nome">Nome Completo</label>
-              <input type="text" class="form-control" id="nome" placeholder="Seu Nome">
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Seu Email">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="cargo">Cargo</label>
+              <input type="text" class="form-control" name="cargo" id="cargo" placeholder="Cargo a ocupar">
+            </div>
+            <div class="form-group">
+              <label for="nivel">Nivel</label>
+              <select class="form-control"  id="nivel" name="nivel">
+                <option value="Pedido">Normal</option>
+                <option value="Aviso">Admin</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="senha">Senha</label>
-              <input type="password" class="form-control" id="senha" placeholder="Sua Senha">
+              <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha Administrativa">
             </div>
-            <!-- ... Outros campos de formulário ... -->
 
-            <!-- Botão de submit -->
             <button type="submit" class="btn btn-primary">Adicionar</button>
           </form>
-      </div>
+        </div>
 
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>
 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
 
   <script src="assets/app.js"></script>
   <!-- Adicionando os scripts necessários do Bootstrap -->
