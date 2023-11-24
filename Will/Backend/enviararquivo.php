@@ -41,7 +41,6 @@ class EnviarArquivo
     }
 }
 
-// Verificar se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include_once('conexao.php');
     $enviarArquivo = new EnviarArquivo($conexao);

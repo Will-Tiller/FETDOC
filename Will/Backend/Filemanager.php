@@ -129,7 +129,7 @@ class Filemanager
                 echo "<td>{$file['categoria']}</td>";
                 echo "<td>{$file['prioridade']}</td>";
                 echo "<td>{$file['estado']}</td>";
-                echo "<td><a href='Backend/detalhes_arquivo.php?id={$file['id']}'><button>Selecionar</button></a></td>";
+                echo "<td><a href='Backend/detalhes_arquivo.php?id={$file['id']}'><button class='btn btn-info'>Selecionar</button></a></td>";
                 echo "</tr>";
             }
 
@@ -260,7 +260,7 @@ class Filemanager
                 echo "<td>{$file['estado']}</td>";
                 echo "<td>{$file['data_submissao']}</td>";
                 echo "<td>{$file['destinatario']}</td>";
-                echo "<td><a href='Backend/detalhes_arquivo.php?id={$file['id']}'><button>Selecionar</button></a></td>";
+                echo "<td><a href='Backend/detalhes_arquivo.php?id={$file['id']}'><button class='btn btn-info'>Selecionar</button></a></td>";
                 echo "</tr>";
             }
 
