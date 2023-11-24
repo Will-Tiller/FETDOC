@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 include_once('conexao.php');
 
 class Actividades
@@ -47,8 +46,8 @@ class Actividades
 
             while ($row = $result->fetch_assoc()) {
                 echo '<tr>';
-                echo '<td>' . $row['nome_usuario'] . '</td>';
-                echo '<td>' . $row['atividade'] . '</td>';
+                echo '<td>' . $row['nome'] . '</td>';
+                echo '<td>' . $row['actividade'] . '</td>';
                 echo '<td>' . $row['hora'] . '</td>';
                 echo '</tr>';
             }

@@ -1,8 +1,9 @@
 <?php
-include_once('actividades.php');
+include_once('Backend/actividades.php');
 include_once('Backend/conexao.php');
 include_once('Backend/Profile.php');
 $profile = new Profile($conexao);
+$Actividades = new Actividades($conexao);
 
 ?>
 <!DOCTYPE html>
@@ -14,8 +15,6 @@ $profile = new Profile($conexao);
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/styleperfil.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha384-ez0wmMyiM8ip9Q4zpoxH4Tsd83e7UFegjRr8RbF9w3jvCWsDxmBAKc83d4tQQZWO" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -87,49 +86,7 @@ $profile = new Profile($conexao);
                 $profile->dados();
 
                 ?>
-                
-              </div>
-            </div>
-            <div class="card mb-4 mb-lg-0">
-              <div class="card mb-4">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0">Nome Completo</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0">Johnatan Smith</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0">Email</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0">example@example.com</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0">Senha</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0">(097) 234-5678</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0">Nível</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0">(098) 765-4321</p>
-                    </div>
-                  </div>
-                  <hr>
-                </div>
+
               </div>
             </div>
           </div>
@@ -148,18 +105,16 @@ $profile = new Profile($conexao);
               <div class="col-md-6">
                 <div class="card mb-4 mb-md-0">
                   <div class="card-body">
-                  <?php $Actividades->mostraractividades(); ?>
-                    <div class="progress rounded mb-2" style="height: 5px;">
-                      <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <p class="mb-4"><span class="text-primary font-italic me-1">Minhas Actidades</span>
+                    </p>
+                    <?php $Actividades->mostraractividades(); ?>
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="card mb-4 mb-md-0">
                   <div class="card-body">
-                    <p class="mb-4"><span class="text-primary font-italic me-1">Minhas Actidades</span> 
+                    <p class="mb-4"><span class="text-primary font-italic me-1">Aqui ainda</span>
                     </p>
                     <p class="mb-1" style="font-size: .77rem;">Web Design</p>
                     <div class="progress rounded" style="height: 5px;">
@@ -222,7 +177,7 @@ $profile = new Profile($conexao);
             </div>
             <div class="form-group">
               <label for="nivel">Nivel</label>
-              <select class="form-control"  id="nivel" name="nivel">
+              <select class="form-control" id="nivel" name="nivel">
                 <option value="Pedido">Normal</option>
                 <option value="Aviso">Admin</option>
               </select>
@@ -244,7 +199,7 @@ $profile = new Profile($conexao);
       </div>
     </div>
   </div>
-  
+
 
   <script src="assets/app.js"></script>
   <!-- Adicionando os scripts necessários do Bootstrap -->
