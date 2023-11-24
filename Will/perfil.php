@@ -87,10 +87,7 @@ $profile = new Profile($conexao);
                 $profile->dados();
 
                 ?>
-                <br>
-                <div class="d-flex justify-content-center mb-2">
-                  <button type="button" class="btn btn-primary">Actualizar</button>
-                </div>
+                
               </div>
             </div>
             <div class="card mb-4 mb-lg-0">
@@ -269,6 +266,7 @@ $profile = new Profile($conexao);
       </div>
     </div>
   </div>
+  
 
   <script src="assets/app.js"></script>
   <!-- Adicionando os scripts necessários do Bootstrap -->

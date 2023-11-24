@@ -20,10 +20,12 @@ class Adicionarprofile
         }
 
 
-        $sql = "INSERT INTO users  (nome, email, cargo, nivel, nivel)VALUES ('$nome', '$email', '$cargo', '$nivel', '$senha')";
+        $sql = "INSERT INTO users  (nome, email, cargo, nivel, senha)VALUES ('$nome', '$email', '$cargo', '$nivel', '$senha')";
 
         if ($this->conexao->query($sql) === TRUE) {
-            echo "Arquivo registrado com sucesso!";
+            header('Location: ../perfil.php');
+
+            exit();
         } else {
             echo "Erro ao registrar o arquivo: " . $this->conexao->error;
         }
@@ -32,7 +34,6 @@ class Adicionarprofile
 
 }
 
-// Verificar se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include_once('conexao.php');
     $adicionar = new Adicionarprofile($conexao);

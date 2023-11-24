@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 session_start();
 include_once('conexao.php');
 
-class Profile 
+class Profile
 {
     private $conexao;
     private $usuario;
@@ -14,7 +14,7 @@ class Profile
         $this->usuario = $_SESSION['usuario'];
     }
 
-    public function dados() 
+    public function dados()
     {
         $nomeUsuario = $this->usuario['nome'];
 
@@ -28,23 +28,30 @@ class Profile
             echo '<p class="text-muted mb-1">Email: ' . $dadosUsuario['email'] . '</p>';
             echo '<p class="text-muted mb-1">Cargo: ' . $dadosUsuario['cargo'] . '</p>';
             echo '<p class="text-muted mb-1">Senha: ' . str_repeat('*', strlen($dadosUsuario['senha'])) . '</p>';
-            
+
             // Verifica o nível do usuário
             if ($dadosUsuario['nivel'] == 2) {
                 echo '<p class="text-muted mb-1">Nível: Admin</p>';
             } else {
                 echo '<p class="text-muted mb-1">Nível: Normal</p>';
             }
+            echo "<br><div class='d-flex justify-content-center mb-2'>
+                <a href='perfilactualizar.php'>
+                <button type='button' class='btn btn-primary'>Atualizar</button>
+                </a>
+              </div>";
+
+
 
         } else {
             echo 'Usuário não encontrado ou sem dados.';
         }
     }
 
-    public function todosusers() 
+    public function todosusers()
     {
         $resultado = $this->conexao->query("SELECT * FROM users") or die($this->conexao->error);
-    
+
         if ($resultado->num_rows > 0) {
             echo '<table class="table">';
             echo '<thead>
@@ -56,7 +63,7 @@ class Profile
                         <th scope="col">Senha</th>
                     </tr>
                 </thead>';
-    
+
             while ($file = $resultado->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>{$file['id']}</td>";
@@ -64,13 +71,60 @@ class Profile
                 echo "<td>{$file['email']}</td>";
                 echo "<td>{$file['cargo']}</td>";
                 echo "<td>" . str_repeat('*', strlen($file['senha'])) . "</td>";
-                
+
                 echo "</tr>";
             }
-    
+
             echo '</table>';
         }
     }
-    
+
+    public function actualizardados()
+    {
+
+        $nomeUsuario = $this->conexao->real_escape_string($this->usuario['nome']);
+        $sql = "SELECT * FROM users WHERE nome = '{$nomeUsuario}'";
+        $resultado = $this->conexao->query($sql);
+
+        if ($resultado === false) {
+            die("Erro na consulta: " . $this->conexao->error);
+        }
+
+        $dadosUsuario = $resultado->fetch_assoc(); // obtem os dados
+
+
+        // Agora pode usar $dadosUsuario no form
+        echo '<h3>Actulizar Meus Dados</h3>';
+        echo '<form action="perfil\_update.php" method="post">';
+
+        echo '<div class="form-group">';
+
+        echo '<label>Nome:</label>';
+
+        echo '<input type="text" name="nome" value="' . $dadosUsuario['nome'] . '" class="form-control">';
+
+        echo '</div>';
+
+        echo '<div class="form-group">';
+
+        echo '<label>Email:</label>';
+
+        echo '<input type="email" name="email" value="' . $dadosUsuario['email'] . '" class="form-control">';
+
+        echo '</div>';
+
+        echo '<div class="form-group">';
+
+        echo '<label>Cargo:</label>';
+
+        echo '<input type="text" name="cargo" value="' . $dadosUsuario['cargo'] . '" class="form-control">';
+
+        echo '</div>';
+
+        echo '<button type="submit">Salvar</button>';
+
+        echo '</form>';
+    }
+
 }
 ?>
