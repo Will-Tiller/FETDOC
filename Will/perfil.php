@@ -19,6 +19,8 @@ $profile = new Profile($conexao);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -85,7 +87,8 @@ $profile = new Profile($conexao);
                 $profile->dados();
 
                 ?>
-                <br><div class="d-flex justify-content-center mb-2">
+                <br>
+                <div class="d-flex justify-content-center mb-2">
                   <button type="button" class="btn btn-primary">Actualizar</button>
                 </div>
               </div>
@@ -137,9 +140,14 @@ $profile = new Profile($conexao);
             <div class="card mb-4">
               <div class="card-body">
                 <h3>Funcionários da Secretaria</h3>
-              <?php 
-                    $profile->todosusers();
-                  ?>
+                <button type="button" class="btn btn-primary" data-toggle="modal"
+                  data-target="#adicionarFuncionarioModal">
+                  
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                + Funcionario
+                </button>
+                <?php $profile->todosusers(); ?>
               </div>
             </div>
             <div class="row">
@@ -217,7 +225,61 @@ $profile = new Profile($conexao);
 
   </div>
 
+  <!-- Modal de Adição de Funcionário -->
+  <div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <form>
+            <!-- Campos de formulário -->
+            <div class="form-group">
+              <label for="nome">Nome Completo</label>
+              <input type="text" class="form-control" id="nome" placeholder="Seu Nome">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Seu Email">
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha</label>
+              <input type="password" class="form-control" id="senha" placeholder="Sua Senha">
+            </div>
+            <!-- ... Outros campos de formulário ... -->
+
+            <!-- Botão de submit -->
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+          </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
   <script src="assets/app.js"></script>
+  <!-- Adicionando os scripts necessários do Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-s0Qsh5Zl5zgSLA5SjKrSnRv6FPaMCqUz3x2JMY/TwF5i3g5VWQfiBbFRTt8+9Ot3"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WygBSVBUoZZi5cuWfzI8ez4g1igFMXfUCj"
+    crossorigin="anonymous"></script>
+
 
 </body>
 
