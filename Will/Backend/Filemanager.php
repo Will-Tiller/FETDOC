@@ -72,7 +72,6 @@ class Filemanager
                         <th scope="col">Data de Submissão</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Destinatario</th>
-                        <th scope="col">Ações</th>
                     </tr>
                 </thead>';
 
@@ -90,7 +89,6 @@ class Filemanager
                 echo "<td>{$file['data_submissao']}</td>";
                 echo "<td>{$file['estado']}</td>";
                 echo "<td>{$file['destinatario']}</td>";
-                echo "<td>{$file['categoria']}</td>";
                 echo "</tr>";
             }
 

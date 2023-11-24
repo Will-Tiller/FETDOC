@@ -92,7 +92,7 @@ include_once('Backend/Filemanager.php');
                             <?php
 
 
-                            $file = new Filemanager($conexao); // Passar a conexão do banco de dados
+                            $file = new Filemanager($conexao);
                             $file->getArquivos();
 
                             ?>
@@ -105,23 +105,22 @@ include_once('Backend/Filemanager.php');
             </div>
 
             <div class="col-6">
-    <div class="card">
-        <div class="card-body">
-            <h3>João Silva</h3>
+                <div class="card">
+                    <div class="card-body">
 
-            <div class="file table-responsive">
-                <?php
+                        <div class="file table-responsive">
+                            <?php
 
-                $id=$_GET['id'];
-            
-                $file = new Filemanager($conexao);
-                $file->getallArquivos($id);
-                ?>
+                            $id = $_GET['id'];
+
+                            $file = new Filemanager($conexao);
+                            $file->getallArquivos($id);
+                            ?>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-
-        </div>
-    </div>
-</div>
 
 
         </div>
