@@ -1,16 +1,20 @@
 <?php
 
 session_start();
+include_once('actividades.php');
 include_once('conexao.php');
 
-class EnviarArquivo {
+class EnviarArquivo
+{
     private $conexao;
 
-    public function __construct($conexao) {
+    public function __construct($conexao)
+    {
         $this->conexao = $conexao;
     }
 
-    public function registrarArquivo($nomeRemetente, $contatoRemetente, $assunto, $prioridade, $categoria, $destinatario, $observacoes, $arquivo) {
+    public function registrarArquivo($nomeRemetente, $contatoRemetente, $assunto, $prioridade, $categoria, $destinatario, $observacoes, $arquivo)
+    {
         // Configuração para salvar o arquivo na pasta
         $diretorioAlvo = "uploads/";
         $caminhoCompleto = $diretorioAlvo . basename($_FILES["arquivo"]["name"]);
@@ -22,7 +26,12 @@ class EnviarArquivo {
                     VALUES ('$nomeRemetente', '$contatoRemetente', '$assunto', '$prioridade', '$categoria', '$destinatario', '$observacoes', '$arquivo', NOW(), 'Em Processamento', '$caminhoCompleto')";
 
             if ($this->conexao->query($sql) === TRUE) {
-                echo "Arquivo registrado com sucesso!";
+
+                $atividadesController = new Actividades($this->conexao);
+                $atividadesController->adicionarAtividade("Registou novo arquivo");
+
+                header('Location: ../registrar.php');
+                exit();
             } else {
                 echo "Erro ao registrar o arquivo: " . $this->conexao->error;
             }

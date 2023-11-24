@@ -1,5 +1,5 @@
 <?php
-
+include_once('actividades.php');
 include_once('Backend/conexao.php');
 
 class LoginController
@@ -10,9 +10,12 @@ class LoginController
     {
         $this->conexao = $conexao;
     }
+    
 
     public function autenticar($usuario, $senha)
     {
+        
+        $atividadesController = new Actividades($this->conexao);
 
         session_start();
 
@@ -36,9 +39,11 @@ class LoginController
 
                     if ($nivel == 1) {
                         $_SESSION['user'] = 'a';
+                        $atividadesController->adicionarAtividade("Fez Login");
                         header("Location: Location: ../login.php");
                     } elseif ($nivel == 2) {
                         $_SESSION['user'] = 'b';
+                        $atividadesController->adicionarAtividade("Fez Login");
                         header("Location: Dashboard.php");
                     } else {
                         header("Location: ../login.php");

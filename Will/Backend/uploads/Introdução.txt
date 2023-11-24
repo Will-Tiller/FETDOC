@@ -1,0 +1,319 @@
+Data mining é o processo de descobrir padrões, relacionamentos ou informações úteis em grandes conjuntos de dados usando várias técnicas e algoritmos. É uma etapa crucial no campo mais amplo da análise de dados e é frequentemente usado para extrair insights valiosos de grandes quantidades de dados.
+
+Data mining is the process of discovering patterns, relationships, or useful information from large datasets using various techniques and algorithms. It is a crucial step in the broader field of data analysis and is often used to extract valuable insights from vast amounts of data.
+
+
+O principal objetivo da mineração de dados é revelar padrões e conhecimentos ocultos que podem ser aplicados a problemas do mundo real, processos de tomada de decisão e modelagem preditiva. Ao analisar grandes conjuntos de dados, a mineração de dados visa identificar tendências, correlações e associações que podem não ser imediatamente evidentes por meio de exame manual.
+
+The main objective of data mining is to uncover hidden patterns and knowledge that can be applied to real-world problems, decision-making processes, and predictive modeling. By analyzing large datasets, data mining aims to identify trends, correlations, and associations that might not be immediately evident through manual examination.
+
+Algumas técnicas comuns de mineração de dados incluem:
+
+Classificação: Isso envolve categorizar dados em classes ou grupos predefinidos com base em determinadas características ou atributos.
+
+Agrupamento (ou Clusterização): O agrupamento visa agrupar pontos de dados semelhantes com base em suas características ou proximidade.
+
+Mineração de Regras de Associação: Essa técnica identifica relacionamentos e associações entre variáveis em grandes conjuntos de dados. Por exemplo, em um ambiente de varejo, pode descobrir que clientes que compram o produto A também têm probabilidade de comprar o produto B.
+
+Análise de Regressão: A análise de regressão ajuda a modelar a relação entre uma variável dependente e uma ou mais variáveis independentes.
+
+Detecção de Anomalias: Essa técnica concentra-se em identificar padrões incomuns ou valores discrepantes nos dados que não estão de acordo com o comportamento esperado.
+
+Mineração de Texto: É uma técnica especializada que extrai informações úteis e padrões significativos de documentos de texto não estruturados.
+
+Some common data mining techniques include:
+
+Classification: This involves categorizing data into predefined classes or groups based on certain features or attributes.
+
+Clustering: Clustering aims to group similar data points together based on their characteristics or proximity.
+
+Association Rule Mining: This technique identifies relationships and associations between variables in large datasets. For example, in a retail setting, it could discover that customers who buy product A are likely to buy product B a
+
+classes are what we want to predict
+atributes are number of colums
+instances are number of rows
+
+information of dataset
+missing Atributes
+class distribution
+
+Correlation is a statistical measure that quantifies the degree of association or relationship between two or more variables. It measures how much and in what direction the variables tend to change together.
+
+DataFrame is  ?
+summary statistics?
+
+data quality
+motivation
+descision support system
+
+five stages toward data driven culture
+
+systatic accuracy
+
+semantic accuracy
+
+consistency
+
+import pandas as pd
+import numpy as np
+from google.colab import drive
+drive.mount('/content/drive', force_remount=True)
+%cd /content/drive/MyDrive/Basics/DataQuality
+ds = pd.read_csv('./beers.csv')
+ds.shape
+len(ds)
+ds.columns
+ds.head()
+ds.head(20)
+ds.dtypes
+ds['id'].nunique()
+id_counts = ds['id'].value_counts()
+id_counts.head
+id_counts = ds['brewery_id'].value_counts()
+id_counts.head
+id_counts.value_counts()
+ds2 = pd.read_csv('./beersPoorDQ.csv', header = None)
+dups = ds2.duplicated()
+print(dups)
+print(dups.any())
+print(ds2[dups])
+ds.isnull()
+print(ds.count().sum())
+countValues = ds.count().sum()
+print(ds.isnull().sum())
+print(ds.isnull().sum().sum())
+countNull=ds.isnull().sum().sum()
+nValues=countValues+countNull
+completeness = countValues/nValues
+completeness='{0:.1f}%'.format(completeness*100)
+print(completeness)
+ds2 = pd.read_csv('./beersPoorDQ.csv')
+ds4 = pd.read_csv('./styles.csv')
+x = ds2['style'].isin(ds4['style'])
+print(x)
+acc = np.sum(x)
+print(acc)
+count = x.count()
+print(count)
+accuracyStyles = acc/count
+print(accuracyStyles*100)
+r = range(5,100)
+accIBU = sum(1 for item in ds2['ibu'] if item in r)
+count = ds2['ibu'].count()
+accuracyIBU = accIBU/count
+print(accuracyIBU)
+ds5 = pd.read_csv('./propertyTimeliness.csv')
+ds5.head(5)
+ds5['Timeliness'] = np.where(ds5['volatility']>ds5['currency'], 1-ds5['currency']/ds5['volatility'], 0)
+ds5
+print("mean: " ,ds5['Timeliness'].mean())
+print("max: " ,ds5['Timeliness'].max())
+print("min: " ,ds5['Timeliness'].min())
+ds5['consistency'] = np.where(ds5['NUM_BATH']>ds5['NUM_BEDROOMS'],0,1)
+consistency_items  = sum(1 for item in ds5['consistency'] if item==1)
+print(consistency_items)
+print(len(ds5))
+consistency = consistency_items/len(ds5)
+print(consistency)
+
+
+
+
+
+
+
+
+
+
+Vamos abordar como cada etapa de Data Quality e Data Preparation pode ser implementada usando o dataset "iris". O dataset "iris" é um conjunto de dados clássico amplamente utilizado na comunidade de aprendizado de máquina e ciência de dados. Ele contém informações sobre três espécies de flores Iris (Setosa, Versicolor e Virginica), com 150 amostras, medindo a largura e o comprimento das sépalas e pétalas.
+
+1. Data Quality (Qualidade dos Dados):
+
+a. Precisão: Verifique se não há erros ou ruídos nos dados. Por exemplo, verifique se as medidas estão dentro dos limites razoáveis para flores Iris.
+
+b. Completude: Verifique se não há dados faltantes. Podemos contar os valores ausentes em cada atributo.
+
+c. Consistência: Verifique se não há contradições nos dados. Por exemplo, uma espécie de flor não deve ter valores de comprimento ou largura negativos.
+
+d. Confiabilidade: Verifique se os dados são provenientes de uma fonte confiável.
+
+e. Atualidade: Verifique se os dados estão atualizados e relevantes para o problema em questão.
+
+2. Data Preparation (Preparação dos Dados):
+
+a. Normalização:
+
+A normalização é importante, principalmente quando usamos algoritmos baseados em distância. Podemos normalizar os atributos numéricos, trazendo-os para uma escala comum, como a escala [0, 1].
+
+Exemplo em Python usando a biblioteca scikit-learn:
+```python
+from sklearn.preprocessing import MinMaxScaler
+import pandas as pd
+
+# Carregar o dataset
+df = pd.read_csv('iris.csv')
+
+# Selecionar apenas os atributos numéricos (sepal_length, sepal_width, petal_length, petal_width)
+numerical_attributes = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+data = df[numerical_attributes]
+
+# Normalizar os atributos numéricos
+scaler = MinMaxScaler()
+data_normalized = scaler.fit_transform(data)
+
+# Substituir os valores normalizados de volta ao dataframe
+df[numerical_attributes] = data_normalized
+```
+
+b. Valores Ausentes:
+
+Se houver valores ausentes, podemos tratá-los de várias maneiras. Uma opção é preencher os valores faltantes pela média ou mediana dos atributos.
+
+Exemplo em Python:
+```python
+# Preencher os valores ausentes pela média dos atributos
+df.fillna(df.mean(), inplace=True)
+```
+
+c. Detecção de Outliers:
+
+Podemos identificar outliers usando várias técnicas, como o método IQR (Interquartile Range) ou visualização de boxplots.
+
+Exemplo em Python usando boxplot:
+```python
+import matplotlib.pyplot as plt
+
+# Visualizar os atributos usando boxplot para detectar outliers
+plt.boxplot(df[numerical_attributes].values, labels=numerical_attributes)
+plt.show()
+```
+
+d. Detecção de Duplicatas:
+
+Para detectar e remover duplicatas, podemos usar a função `drop_duplicates()` da biblioteca pandas.
+
+Exemplo em Python:
+```python
+# Remover duplicatas do dataframe
+df.drop_duplicates(inplace=True)
+```
+
+Essas são algumas das principais etapas de Data Quality e Data Preparation que podem ser aplicadas ao dataset "iris". É importante adaptar as técnicas de acordo com a natureza do problema e os requisitos específicos do projeto de Data Mining.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Mining is a process of discovering valuable information, patterns, and hidden knowledge in large datasets. Among the various topics related to Data Mining, the main aspects covered in this explanation are:
+
+1. Data Quality:
+
+Data quality is essential for obtaining accurate and reliable results in Data Mining projects. Low-quality data can lead to incorrect conclusions, so it is crucial to assess and improve data quality before proceeding with the analysis. Some key attributes of data quality include:
+
+- Accuracy: The correctness of the values in the data concerning the reality they represent.
+- Completeness: The extent to which all necessary data is present.
+- Consistency: The coherence of data, avoiding internal contradictions.
+- Reliability: The reliability of data and its source.
+- Timeliness: The age of data in relation to the context of the analysis.
+
+2. Data Quality Dimensions:
+
+Data quality dimensions represent different perspectives for evaluating data quality. Some common dimensions are:
+
+- Validity: The data is correct and adheres to defined rules.
+- Integrity: There are no missing data or incomplete information.
+- Consistency: There are no contradictions between data from different sources or datasets.
+- Accuracy: The data accurately reflects the events or objects it represents.
+- Uniqueness: There are no duplicates in the data.
+
+3. Assessment Metrics:
+
+To quantify data quality, specific metrics are used for each dimension. For example, to measure integrity, one can calculate the proportion of missing data compared to the expected total. For accuracy, metrics like mean absolute error or mean squared error can be used, depending on the data type.
+
+4. Data Preparation:
+
+Before applying Data Mining techniques, data needs to be prepared to ensure it is suitable for analysis. This step includes various tasks of data cleaning and formatting to make it ready for use in mining algorithms. Some essential aspects of data preparation include:
+
+- Normalization: Rescaling attribute values to a standard scale to avoid undue influence of certain attributes on others during analysis.
+- Missing Values: Handling missing values, which can be replaced with mean values, interpolated, or removed depending on the context.
+- Outlier Detection: Identifying and treating outliers that can distort analysis results.
+- Duplicate Detection: Identifying and removing duplicate entries, preventing inflated and biased results.
+
+Each of these steps is crucial to ensure that Data Mining analysis is robust and generates reliable and valuable insights from the available data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introdução às Tarefas de Mineração de Dados
+
+As tarefas de mineração de dados podem ser classificadas em geral em dois tipos, com base no que uma tarefa específica tenta alcançar. Essas duas categorias são tarefas descritivas e tarefas preditivas. As tarefas descritivas de mineração de dados caracterizam as propriedades gerais dos dados, enquanto as tarefas preditivas de mineração de dados realizam inferências no conjunto de dados disponível para prever como um novo conjunto de dados se comportará.
+
+Diferentes Tarefas de Mineração de Dados
+
+Existem várias tarefas de mineração de dados, como classificação, previsão, análise de séries temporais, associação, agrupamento, sumarização, etc. Todas essas tarefas são classificadas como tarefas de mineração de dados preditivas ou descritivas. Um sistema de mineração de dados pode executar uma ou mais das tarefas especificadas acima como parte da mineração de dados.
+
+a) Classificação
+
+A classificação deriva um modelo para determinar a classe de um objeto com base em seus atributos. Uma coleção de registros estará disponível, cada registro com um conjunto de atributos. Um dos atributos será o atributo de classe e o objetivo da tarefa de classificação é atribuir um atributo de classe a um novo conjunto de registros com a maior precisão possível.
+
+A classificação pode ser usada em marketing direto, ou seja, para reduzir os custos de marketing, direcionando um conjunto de clientes que provavelmente comprará um novo produto. Usando os dados disponíveis, é possível saber quais clientes compraram produtos similares e quem não comprou no passado. Portanto, a decisão {compra, não compra} forma o atributo de classe nesse caso. Uma vez que o atributo de classe é atribuído, informações demográficas e de estilo de vida dos clientes que compraram produtos similares podem ser coletadas e mensagens promocionais podem ser enviadas diretamente a eles.
+
+b) Previsão
+
+A tarefa de previsão prevê os possíveis valores de dados ausentes ou futuros. A previsão envolve o desenvolvimento de um modelo com base nos dados disponíveis, e esse modelo é usado para prever valores futuros de um novo conjunto de dados de interesse. Por exemplo, um modelo pode prever a renda de um funcionário com base em educação, experiência e outros fatores demográficos, como local de residência, gênero etc. A análise de previsão também é usada em diferentes áreas, incluindo diagnóstico médico, detecção de fraudes, etc.
+
+c) Análise de Séries Temporais
+
+Uma série temporal é uma sequência de eventos em que o próximo evento é determinado por um ou mais eventos anteriores. A série temporal reflete o processo sendo medido e existem certos componentes que afetam o comportamento de um processo. A análise de séries temporais inclui métodos para analisar dados de séries temporais para extrair padrões, tendências, regras e estatísticas úteis. A previsão do mercado de ações é uma aplicação importante da análise de séries temporais.
+
+d) Associação
+
+A associação descobre a associação ou conexão entre um conjunto de itens. A associação identifica os relacionamentos entre objetos. A análise de associação é usada para gestão de mercadorias, publicidade, design de catálogos, marketing direto etc. Um varejista pode identificar os produtos que normalmente os clientes compram juntos ou mesmo encontrar os clientes que respondem à promoção de produtos do mesmo tipo. Se um varejista descobre que cerveja e fraldas são compradas juntas na maioria das vezes, ele pode colocar as fraldas em promoção para promover as vendas de cerveja.
+
+e) Agrupamento
+
+O agrupamento é usado para identificar objetos de dados que são similares entre si. A similaridade pode ser decidida com base em vários fatores, como comportamento de compra, resposta a determinadas ações, localizações geográficas etc. Por exemplo, uma companhia de seguros pode agrupar seus clientes com base na idade, residência, renda, etc. Essas informações de grupos serão úteis para entender melhor os clientes e, assim, fornecer serviços personalizados melhores.
+
+f) Sumarização
+
+A sumarização é a generalização dos dados. Um conjunto de dados relevantes é resumido, resultando em um conjunto menor que fornece informações agregadas dos dados. Por exemplo, as compras feitas por um cliente podem ser resumidas em produtos totais, gastos totais, ofertas utilizadas, etc. Essas informações resumidas de alto nível podem ser úteis para a equipe de vendas ou relacionamento com o cliente para análise detalhada do comportamento do cliente e das compras. Os dados podem ser resumidos em diferentes níveis de abstração e de diferentes ângulos.
+
+Resumo
+
+Diferentes tarefas de mineração de dados são o cerne do processo de mineração de dados. Diferentes tarefas de mineração de dados preditivas e de classificação extraem, na verdade, as informações necessárias dos conjuntos de dados disponíveis.
+
+
+
+
+

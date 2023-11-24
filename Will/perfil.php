@@ -1,5 +1,5 @@
 <?php
-
+include_once('actividades.php');
 include_once('Backend/conexao.php');
 include_once('Backend/Profile.php');
 $profile = new Profile($conexao);
@@ -148,8 +148,7 @@ $profile = new Profile($conexao);
               <div class="col-md-6">
                 <div class="card mb-4 mb-md-0">
                   <div class="card-body">
-                    <p class="mb-4"><span class="text-primary font-italic me-1">Minhas Actidades 1 </span></p>
-                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+                  <?php $Actividades->mostraractividades(); ?>
                     <div class="progress rounded mb-2" style="height: 5px;">
                       <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
                         aria-valuemin="0" aria-valuemax="100"></div>
