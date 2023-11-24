@@ -27,7 +27,7 @@ class Profile
             echo '<h5 class="my-3">Nome: ' . $dadosUsuario['nome'] . '</h5>';
             echo '<p class="text-muted mb-1">Email: ' . $dadosUsuario['email'] . '</p>';
             echo '<p class="text-muted mb-1">Cargo: ' . $dadosUsuario['cargo'] . '</p>';
-            echo '<p class="text-muted mb-1">Senha: ' . $dadosUsuario['senha'] . '</p>';
+            echo '<p class="text-muted mb-1">Senha: ' . str_repeat('*', strlen($dadosUsuario['senha'])) . '</p>';
             
             // Verifica o nível do usuário
             if ($dadosUsuario['nivel'] == 2) {
@@ -43,10 +43,8 @@ class Profile
 
     public function todosusers() 
     {
-        
-
         $resultado = $this->conexao->query("SELECT * FROM users") or die($this->conexao->error);
-
+    
         if ($resultado->num_rows > 0) {
             echo '<table class="table">';
             echo '<thead>
@@ -58,20 +56,21 @@ class Profile
                         <th scope="col">Senha</th>
                     </tr>
                 </thead>';
-
+    
             while ($file = $resultado->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>{$file['id']}</td>";
                 echo "<td>{$file['nome']}</td>";
                 echo "<td>{$file['email']}</td>";
-                
                 echo "<td>{$file['cargo']}</td>";
-                echo "<td>{$file['senha']}</td>";
+                echo "<td>" . str_repeat('*', strlen($file['senha'])) . "</td>";
+                
                 echo "</tr>";
             }
-
+    
             echo '</table>';
         }
     }
+    
 }
 ?>
