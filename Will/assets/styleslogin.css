@@ -1,0 +1,98 @@
+body {
+
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: rgba(196, 217, 236, 1) 94.3676%;
+
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px; 
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.left-section, .right-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.left-section {
+    text-align: center;
+}
+
+.left-section img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.right-section {
+    text-align: center;
+}
+
+.login-message {
+
+    background-color: #007bff;
+    color: #FFFF00;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+form {
+
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+input {
+
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+button {
+
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px; 
+}

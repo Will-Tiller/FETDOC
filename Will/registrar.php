@@ -21,7 +21,7 @@
     </header>
 
     <div class="sidebar">
-        <h3><a href="index.php">FET</a></h3>
+        <h3><a href="index1.php">FET</a></h3>
         <ul>
             <li>
                 <a href="dashboard.php">Dashboard</a>

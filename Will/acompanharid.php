@@ -34,7 +34,7 @@ include_once('Backend/Filemanager.php');
     </header>
 
     <div class="sidebar">
-        <h3><a href="index.html">FET</a></h3>
+        <h3><a href="index1.html">FET</a></h3>
         <ul>
             <li>
                 <a href="dashboard.php">Dashboard</a>
